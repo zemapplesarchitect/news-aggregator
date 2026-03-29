@@ -21,20 +21,39 @@ feeds = [
     "https://thenewstack.io/ai/feed/",
     "https://pub.towardsai.net/feed",
     "https://www.kdnuggets.com/feed",
+    "https://slashdot.org/index.rss",
     "https://machinelearningmastery.com/feed/",
+    "https://www.technologyreview.com/topic/artificial-intelligence/",
+    "https://www.mckinsey.com/capabilities/quantumblack/our-insights/enterprise-ai",
+    "https://www.accenture.com/us-en/insights-index?filter=Data+%26+Artificial+Intelligence",
+    "https://www.cbinsights.com/generative-ai/",
+    "https://www.quantamagazine.org/feed/",
+    "https://feeds.content.dowjones.io/public/rss/RSSWSJD",
+
 ]
 line_limits = [100, 200]
 
-[topics.cricket]
-feeds = [
-    "https://www.espncricinfo.com/rss/content/story/feeds/0.xml",
-    "https://feeds.bbci.co.uk/sport/cricket/rss.xml",
-    "https://cricketweb.net/feed",
-]
-line_limits = [20, 50]
+# [topics.cricket]
+#feeds = [
+#    "https://www.espncricinfo.com/rss/content/story/feeds/0.xml",
+#   "https://feeds.bbci.co.uk/sport/cricket/rss.xml",
+#    "https://cricketweb.net/feed",
+#]
+# line_limits = [20, 50]
 
-[topics.finance]
+[topics.financeandtechnology]
 feeds = [
-    "https://www.wsj.com/",
+    "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain",
+    "https://feeds.reuters.com/reuters/businessNews",
+    "https://feeds.marketwatch.com/marketwatch/topstories/",
+    "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
+    "https://feeds.content.dowjones.io/public/rss/socialeconomyfeed",
+    "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights",
+    "https://www.accenture.com/us-en/insights-index?filter=Emerging+Technology",
+    "https://www.accenture.com/us-en/insights-index?filter=Digital+Engineering+and+Manufacturing",
+    "https://www.cbinsights.com/generative-ai/",
+    "https://www.deloitte.com/us/en/insights/topics/technology-management.html",
+    "https://www.deloitte.com/us/en/insights/topics/innovation.html",
+    "https://www.quantamagazine.org/feed/",
 ]
-line_limits = [50, 100]
+line_limits = [10, 200]
