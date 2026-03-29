@@ -1,0 +1,58 @@
+{
+  "run_date": "2026-03-29",
+  "run_timestamp": "2026-03-29T22:36:34.507883+00:00",
+  "duration_seconds": 121.6,
+  "model": "google/gemini-2.5-pro",
+  "skipped_summarize": false,
+  "skipped_dedup": false,
+  "topics": [
+    {
+      "topic": "ai",
+      "feeds_total": 18,
+      "feeds_succeeded": 9,
+      "feeds_failed": 9,
+      "articles_fetched": 51,
+      "articles_after_dedup": 50,
+      "prompt_tokens": 8492,
+      "completion_tokens": 7996,
+      "total_tokens": 16488,
+      "error": null,
+      "cost": 0.03248
+    },
+    {
+      "topic": "cricket",
+      "feeds_total": 3,
+      "feeds_succeeded": 2,
+      "feeds_failed": 1,
+      "articles_fetched": 37,
+      "articles_after_dedup": 37,
+      "prompt_tokens": 3798,
+      "completion_tokens": 4902,
+      "total_tokens": 8700,
+      "error": null,
+      "cost": 0.018504
+    },
+    {
+      "topic": "finance",
+      "feeds_total": 1,
+      "feeds_succeeded": 0,
+      "feeds_failed": 1,
+      "articles_fetched": 0,
+      "articles_after_dedup": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0,
+      "error": null,
+      "cost": 0.0
+    }
+  ],
+  "total_articles_fetched": 88,
+  "total_articles_after_dedup": 87,
+  "total_tokens": 25188,
+  "total_prompt_tokens": 12290,
+  "total_completion_tokens": 12898,
+  "total_feeds": 22,
+  "successful_feeds": 11,
+  "total_cost": 0.050984,
+  "topic_errors": 0
+}
