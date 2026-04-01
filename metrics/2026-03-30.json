@@ -1,7 +1,7 @@
 {
   "run_date": "2026-03-30",
-  "run_timestamp": "2026-03-30T11:46:32.872377+00:00",
-  "duration_seconds": 331.6,
+  "run_timestamp": "2026-03-30T12:01:00.336967+00:00",
+  "duration_seconds": 310.5,
   "model": "google/gemini-2.5-pro",
   "skipped_summarize": false,
   "skipped_dedup": false,
@@ -11,13 +11,13 @@
       "feeds_total": 25,
       "feeds_succeeded": 11,
       "feeds_failed": 14,
-      "articles_fetched": 66,
-      "articles_after_dedup": 65,
-      "prompt_tokens": 10277,
-      "completion_tokens": 7737,
-      "total_tokens": 18014,
+      "articles_fetched": 67,
+      "articles_after_dedup": 66,
+      "prompt_tokens": 10417,
+      "completion_tokens": 6280,
+      "total_tokens": 16697,
       "error": null,
-      "cost": 0.033488
+      "cost": 0.029257
     },
     {
       "topic": "financeandtechnology",
@@ -26,20 +26,20 @@
       "feeds_failed": 7,
       "articles_fetched": 65,
       "articles_after_dedup": 64,
-      "prompt_tokens": 7512,
-      "completion_tokens": 7250,
-      "total_tokens": 14762,
+      "prompt_tokens": 7478,
+      "completion_tokens": 6404,
+      "total_tokens": 13882,
       "error": null,
-      "cost": 0.029262
+      "cost": 0.02669
     }
   ],
-  "total_articles_fetched": 131,
-  "total_articles_after_dedup": 129,
-  "total_tokens": 32776,
-  "total_prompt_tokens": 17789,
-  "total_completion_tokens": 14987,
+  "total_articles_fetched": 132,
+  "total_articles_after_dedup": 130,
+  "total_tokens": 30579,
+  "total_prompt_tokens": 17895,
+  "total_completion_tokens": 12684,
   "total_feeds": 37,
   "successful_feeds": 16,
-  "total_cost": 0.06275,
+  "total_cost": 0.055947,
   "topic_errors": 0
 }
