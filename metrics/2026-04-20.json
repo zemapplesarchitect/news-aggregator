@@ -1,0 +1,45 @@
+{
+  "run_date": "2026-04-20",
+  "run_timestamp": "2026-04-20T12:13:32.740176+00:00",
+  "duration_seconds": 336.4,
+  "model": "google/gemini-2.5-pro",
+  "skipped_summarize": false,
+  "skipped_dedup": false,
+  "topics": [
+    {
+      "topic": "ai",
+      "feeds_total": 25,
+      "feeds_succeeded": 14,
+      "feeds_failed": 11,
+      "articles_fetched": 73,
+      "articles_after_dedup": 72,
+      "prompt_tokens": 10978,
+      "completion_tokens": 6788,
+      "total_tokens": 17766,
+      "error": null,
+      "cost": 0.031342
+    },
+    {
+      "topic": "financeandtechnology",
+      "feeds_total": 12,
+      "feeds_succeeded": 5,
+      "feeds_failed": 7,
+      "articles_fetched": 58,
+      "articles_after_dedup": 58,
+      "prompt_tokens": 6692,
+      "completion_tokens": 7560,
+      "total_tokens": 14252,
+      "error": null,
+      "cost": 0.029372
+    }
+  ],
+  "total_articles_fetched": 131,
+  "total_articles_after_dedup": 130,
+  "total_tokens": 32018,
+  "total_prompt_tokens": 17670,
+  "total_completion_tokens": 14348,
+  "total_feeds": 37,
+  "successful_feeds": 19,
+  "total_cost": 0.060714000000000004,
+  "topic_errors": 0
+}
