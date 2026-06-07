@@ -35,12 +35,10 @@ def _format_articles_as_markdown(articles: list[Article], topic: str) -> str:
     lines = [f"# {topic.upper()} News\n"]
     for article in articles:
         lines.append(f"### {article.title}")
-        lines.append(f"**Source:** {article.source}\n")
+        lines.append(f"**Source:** [{article.source}]({escape_markdown_url(article.link)})\n")
         if article.summary:
             lines.append(f"{article.summary}\n")
-        lines.append(f"[Read more]({article.link})\n")
     return "\n".join(lines)
-
 
 @click.command()
 @click.option(
