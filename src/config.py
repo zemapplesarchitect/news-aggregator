@@ -132,6 +132,7 @@ def get_llm_config() -> tuple[str, str | None, str]:
 
     return key, base_url, model
 
+
 # --- Metrics ---
 DEFAULT_METRICS_DIR: Final[Path] = Path(__file__).parent.parent / "metrics"
 DEFAULT_METRICS_FILE: Final[Path] = DEFAULT_METRICS_DIR / "history.jsonl"
