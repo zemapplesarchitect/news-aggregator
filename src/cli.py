@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 from .config import (
     CONTENT_SEPARATOR,
-    DEFAULT_METRICS_DIR,
+    DEFAULT_METRICS_FILE,
     DEFAULT_OUTPUT_DIR,
     FEEDS,
     LLM_MODEL_DEFAULT,
@@ -17,14 +17,15 @@ from .config import (
 )
 from .deduplicator import deduplicate_articles
 from .exceptions import NewsAggregatorError, SummarizationError
+from .logging_config import configure_logging
 from .markdown_generator import get_output_path, write_markdown
 from .metrics import RunMetrics, TopicMetrics, estimate_cost
 from .rss_fetcher import Article, fetch_all_feeds
 from .summarizer import summarize_articles
+from .utils import escape_markdown_url
 
 load_dotenv()
 
-logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
 
 VALID_TOPICS = list(FEEDS.keys()) + ["all"]
@@ -39,6 +40,7 @@ def _format_articles_as_markdown(articles: list[Article], topic: str) -> str:
         if article.summary:
             lines.append(f"{article.summary}\n")
     return "\n".join(lines)
+
 
 @click.command()
 @click.option(
@@ -79,6 +81,7 @@ def main(
     dry_run: bool,
 ) -> None:
     """Fetch and summarize news for a given topic."""
+    configure_logging()
     start_time = time.monotonic()
     topics = list(FEEDS.keys()) if topic == "all" else [topic]
     all_summaries = []
@@ -129,8 +132,8 @@ def main(
                     tm.total_tokens = summarize_result.total_tokens
                     tm.cost = estimate_cost(tm.prompt_tokens, tm.completion_tokens, model)
                 all_summaries.append(summary)
-        except (NewsAggregatorError, SummarizationError) as e:
-            logger.error("Error fetching %s: %s", t, e)
+        except Exception as e:
+            logger.error("Error processing %s: %s", t, e)
             tm.error = str(e)
             topic_errors += 1
         finally:
@@ -146,7 +149,7 @@ def main(
             skipped_dedup=skip_dedup,
             topics=all_topic_metrics,
         )
-        run_metrics.save(DEFAULT_METRICS_DIR)
+        run_metrics.save_jsonl(DEFAULT_METRICS_FILE)
 
     if not all_summaries:
         if topic_errors > 0:
