@@ -34,30 +34,22 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
-
+      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
       - name: Install uv
         uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0
         with:
           enable-cache: true
-
       - name: Set up Python
         run: uv python install
-
       - name: Install dependencies
         run: uv sync
-
       - name: Lint with ruff
         run: uv run ruff check .
-
       - name: Check formatting
         run: uv run ruff format --check .
-
       - name: Type check
         run: uv run mypy src/
-
-       - name: Audit dependencies
+      - name: Audit dependencies
         run: uv run pip-audit --ignore-vuln CVE-2026-3219 --skip-editable  # pip: transitive dep of pip-audit, no fix available
-
       - name: Run tests
         run: uv run pytest -v --cov=src --cov-report=term-missing --cov-fail-under=80
